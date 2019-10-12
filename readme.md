@@ -1,6 +1,10 @@
-The bash script for streaming webm and mp4 video into your video player.  
-Usage: ./stream.sh and then play playlist.m3u with your VLC player
+Flask-based web application for pleasurely watching webm videos from 2ch /b/ threads
 
 REQUIRES:
-* jq
-* curl
+flask
+
+Installation and running:
+    * Create a virtual environment: `python3 -m venv venv`
+    * Activate environment: `. venv/bin/activate`
+    * Install requirments: `pip install -r requirments.txt`
+    * Run flask: `FLASK_APP=webm_streamer.py flask run`
