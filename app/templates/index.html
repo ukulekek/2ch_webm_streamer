@@ -2,12 +2,29 @@
 
 {% block content%}
 <body>
-    <h1>Choose the thread:</h1><br>
+    <div id="about">
+        <h1>Welcome, again!</h1>
+        <p1>
+            This is your place for fun and relax.
+            Here you can enjoy webm threads from 2ch. <br>
+            Choose one of 2ch threads or playlist of webms liked by you and other users.<br>
+            Click the "Like" button in playlist and this webm will be added in "Liked Webms"
+        </p1>
+    </div>
+    <h2>Choose the thread:</h1><br>
+    <div id="favourite_thread">
+                <b>Liked Webms </b>
+                <br>Files count: {{ cnt }}
+                <br><a href={{ url_for('thread', num = "favourite") }}>
+                <input class="myButton" type="submit" name="submit_button" value="Show me"></a>
+    </div>
+        <br>
     {% for thread in threads %}
     <div id="thread">
-            <b>"{{ thread.subject }}" </b>
-            <br>Files count: {{ thread.files_count }}
-            <br><a href={{ url_for('thread', num = thread.num) }}><input class="myButton" type="submit" name="submit_button" value=Show me></a>
+                <b>{{ thread.subject }} </b>
+                <br>Files count: {{ thread.files_count }}
+                <br><a href={{ url_for('thread', num = thread.num) }}>
+                <input class="myButton" type="submit" name="submit_button" value="Show me"></a>
     </div>
         <br>
     {% endfor %}

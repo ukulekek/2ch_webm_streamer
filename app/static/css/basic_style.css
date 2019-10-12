@@ -5,15 +5,23 @@ body{
 h1{
   margin: auto;
   width: 50%;
-  color: #d62828;
+  color: #f8b160;
   font-family: 'Ubuntu', sans-serif;
   text-align: center;
 }
 
-#thread{
+h2{
+  margin: auto;
+  width: 50%;
+  color: #d62828;
+  font-family: 'Ubuntu', sans-serif;
+  text-align: center;
+  padding: 1%;
+}
+
+#about {
   background: #db7100;
   margin: auto;
-  width: 70%;
   -webkit-box-shadow: -5px 5px 2px 0px #000000; 
   box-shadow: -5px 5px 2px 0px #000000;
   font-family: 'Ubuntu', sans-serif;
@@ -25,7 +33,43 @@ h1{
   font-variant: normal;
   padding: 1%;
   text-align: center;
+  width: 50%;
+
 }
+#favourite_thread{
+  background: #f3d320;
+  margin: auto;
+  -webkit-box-shadow: -5px 5px 2px 0px #000000; 
+  box-shadow: -5px 5px 2px 0px #000000;
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 16px;
+  word-spacing: 2px;
+  color: #003049;
+  font-weight: normal;
+  font-style: normal;
+  font-variant: normal;
+  padding: 1%;
+  text-align: center;
+  width: 30%;
+}
+
+#thread{
+  background: #db7100;
+  margin: auto;
+  -webkit-box-shadow: -5px 5px 2px 0px #000000; 
+  box-shadow: -5px 5px 2px 0px #000000;
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 16px;
+  word-spacing: 2px;
+  color: #003049;
+  font-weight: normal;
+  font-style: normal;
+  font-variant: normal;
+  padding: 1%;
+  text-align: center;
+  width: 30%;
+}
+
 
 .myButton {
   color: #003049;

@@ -13,27 +13,39 @@
         <video id="videoArea" controls="controls" poster="" src="" muted></video>
       </div>
 
+      <div id='information'>
+      </div>
+
       <div id='playlistContainer'>
 
-	<ul id="playlist">
-    {% for file in files %}
-      <li src="https://2ch.hk{{ file['path'] }}">{{ file['name'] }}</li>>
-    {% endfor %}
-	</ul>
+        <a href="{{ url_for('index') }}">HOME</a>
+        <p class='text'>Copy link below to share the video</p>
+        <ul id="playlist">
+          {% for file in files %}
+            <li src="https://2ch.hk{{ file['path'] }}">
+              <p id="p">https://2ch.hk{{ file['path'] }}</p>
+              <img id="thmb" src="https://2ch.hk{{ file['thumbnail'] }}">
+              <form method="post" action={{ url_for('thread', num=num) }}>
+                <input type="submit" name="{{ file['path'] }}" value="Like">
+              </form>
+            </li>
+          {% endfor %}
+        </ul>
 
 
-      <div id="controls">
-        <div id="left" >
-          <svg width="auto" height="80px" viewBox="0 0 50 80" xml:space="preserve">
-            <polyline fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" points="
-          45.63,73 0.375,38.087 45.63,3 "/>
-          </svg>
-        </div>
-        <div id="right" >
-          <svg width="auto" height="80px" viewBox="0 0 50 80">
-            <polyline fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" points="
-          0.375,3 45.63,38.087 0.375,73 "/>
-          </svg>
+        <div id="controls">
+          <div id="left" >
+            <svg width="auto" height="80px" viewBox="0 0 50 80" xml:space="preserve">
+              <polyline fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" points="
+            45.63,73 0.375,38.087 45.63,3 "/>
+            </svg>
+          </div>
+          <div id="right" >
+            <svg width="auto" height="80px" viewBox="0 0 50 80">
+              <polyline fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" points="
+            0.375,3 45.63,38.087 0.375,73 "/>
+            </svg>
+          </div>
         </div>
       </div>
 

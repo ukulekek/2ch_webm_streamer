@@ -4,6 +4,9 @@ import re
 import sys
 import json
 from urllib import request
+import os
+
+path = os.path.dirname(os.path.realpath(__file__))
 
 
 #GET request to get JSON site
@@ -32,20 +35,18 @@ def download_thread(link):
                 duration = file['duration_secs']
             fileName =file['name']
             if(fileName[-3:] == 'mp4' or fileName[-4:] == 'webm'):
-                files.append({"name": file['fullname'], "path": file['path'], "duration": duration})
+                files.append({"name": file['fullname'], "path": file['path'], "duration": duration, "thumbnail": file['thumbnail']})
 
     return files
 
 
-def generate_json_playlist(files):
-    json_playlist = json.dumps(files, ensure_ascii=False, indent="\t")
-    return json_playlist
+def load_favourites():
+    with open('{}/favourite.json'.format(path), 'r') as json_file:
+        favourite_json = json.load(json_file)
+        return favourite_json
 
-
-#if __name__ == '__main__':
-#    threads = getWebmThreads()
-#    printThreads(threads)
-#    num = readThreadNum(0, len(threads) - 1)
-#    threadLink = "https://2ch.hk/b/res/" + threads[num]['num'] + ".json"
-#    files = dowloadThread(threadLink)
-#    generateJsonPlaylist(files)
+def save_to_favourite(file):
+    favourite_json = load_favourites()
+    favourite_json.append(file)
+    with open('{}/favourite.json'.format(path), 'w') as json_file:
+        json.dump(favourite_json, json_file)

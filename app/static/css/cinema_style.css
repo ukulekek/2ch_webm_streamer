@@ -26,15 +26,16 @@ body{
    cursor:pointer;
    list-style-type: none;
    padding:8px;
-   border-bottom: 1px solid white;
+   font-size: 60%;
+   border-top: 1px solid white;
 }
 
-#playlist li[active]{
+#playlist [active]{
   background-color:orange;
   color:white;
 }
 
-#playlist li:hover{
+#playlist :hover{
     /* color:blue; */
     background-color:grey;
 }
@@ -69,8 +70,17 @@ body{
 }
 
 #videoContainer{
-  flex: 1 0 80%;
+  flex: 1 0 70%;
   padding: 5px;
+}
+#videoContainer .text {
+  position:relative;
+}
+#playlistContainer a{
+  color: #262d97;
+  background: #f8b160;
+  text-align: center;
+  padding: 1%;
 }
 
 
