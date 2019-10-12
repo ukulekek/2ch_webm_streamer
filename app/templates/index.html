@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content%}
+<body>
+    <h1>Choose the thread:</h1><br>
+    {% for thread in threads %}
+    <div id="thread">
+            <b>"{{ thread.subject }}" </b>
+            <br>Files count: {{ thread.files_count }}
+            <br><a href={{ url_for('thread', num = thread.num) }}><input class="myButton" type="submit" name="submit_button" value=Show me></a>
+    </div>
+        <br>
+    {% endfor %}
+</body>
+{% endblock%}

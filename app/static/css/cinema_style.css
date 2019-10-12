@@ -1,0 +1,81 @@
+body{
+  display:flex;
+  align-items: stretch;
+  flex-direction: row;
+  justify-content: stretch;
+  background-color: #333333;
+  color:white;
+}
+
+#playlistContainer{
+  margin-right: 15px;
+  max-height: 97vh;
+  resize: vertical;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+#playlist{
+  padding: 1px;
+  display: block;
+  overflow-y: auto;
+}
+
+#playlist li{
+   cursor:pointer;
+   list-style-type: none;
+   padding:8px;
+   border-bottom: 1px solid white;
+}
+
+#playlist li[active]{
+  background-color:orange;
+  color:white;
+}
+
+#playlist li:hover{
+    /* color:blue; */
+    background-color:grey;
+}
+
+#controls{
+  display: flex;
+  justify-content:  space-evenly;
+}
+
+#controls > div{
+  flex-grow: 1;
+}
+
+#controls polyline{
+  transition: all 250ms ease-in-out;
+}
+
+#controls #left:hover,
+#controls #right:hover{
+  cursor: pointer;
+}
+
+#controls #left:hover polyline,
+#controls #right:hover polyline{
+  stroke-width: 5;
+}
+
+#controls #left:active polyline,
+#controls #right:active polyline{
+  stroke-width: 8;
+  transition: all 100ms ease-in-out;
+}
+
+#videoContainer{
+  flex: 1 0 80%;
+  padding: 5px;
+}
+
+
+#videoArea {
+  border:1px solid silver;
+  width: 95%;
+  max-height: 95vh;
+}

@@ -1,0 +1,43 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link href="{{ url_for('static',filename='css/cinema_style.css') }}" rel="Stylesheet" type="text/css" />
+        <script src="/static/js/jq-min.js"></script>
+        <link id="favicon" rel="shortcut icon" href="/static/ico/favicon.ico">
+        <title>Welcome. Again.</title>
+    </head>
+    <body>
+      <div id='videoContainer'>
+        <video id="videoArea" controls="controls" poster="" src="" muted></video>
+      </div>
+
+      <div id='playlistContainer'>
+
+	<ul id="playlist">
+    {% for file in files %}
+      <li src="https://2ch.hk{{ file['path'] }}">{{ file['name'] }}</li>>
+    {% endfor %}
+	</ul>
+
+
+      <div id="controls">
+        <div id="left" >
+          <svg width="auto" height="80px" viewBox="0 0 50 80" xml:space="preserve">
+            <polyline fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" points="
+          45.63,73 0.375,38.087 45.63,3 "/>
+          </svg>
+        </div>
+        <div id="right" >
+          <svg width="auto" height="80px" viewBox="0 0 50 80">
+            <polyline fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" points="
+          0.375,3 45.63,38.087 0.375,73 "/>
+          </svg>
+        </div>
+      </div>
+
+
+      <script src="/static/js/script.js"></script>
+  </body>
+</html>
